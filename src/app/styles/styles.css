@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 50px 0;
+  box-sizing: border-box;
+}
+.wrapper {
+  margin: 0 auto;
+  width: 90%;
+  border: 1px solid f1f1f1;
+  height: 80vh;
+  overflow: hidden;
+  padding: 20px;
+  box-shadow: 5px 10px 8px 10px #888888;
+}
+.header {
+  font-size: 22px;
+  border-bottom: 1px solid;
+  padding-bottom: 10px;
+}
+.tree-container {
+  padding: 20px 0;
+  max-height: 90%;
+  overflow-y: overlay;
+}
+.tree-container .tree-list {
+  display: flex;
+  flex-direction: column;
+  margin-left: 32px;
+}
+.tree-container .tree-list .folder {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.tree-container .tree-list .folder .tree-node {
+  font-size: 18px;
+}
+.tree-container .tree-list .counter {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #5d8aa8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  margin-left: 5px;
+}
+.tree-container .tree-node {
+  font-size: 16px;
+  line-height: 24px;
+  padding: 8px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+.icon.icon-toggle {
+  cursor: pointer;
+  background-color: #e9e9e9;
+}
+.icon.icon-toggle:before {
+  content: "+";
+}
+.icon.icon-toggle.opened:before {
+  content: "-";
+}
+.icon.icon-folder {
+  background: url(../../assets/img/folder.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon.icon-file {
+  background: url(../../assets/img/file.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon.icon-arrow {
+  background: url(../../assets/img/arrow.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.sort-selector {
+  color: #bdbebd;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.sort-selector .text {
+  font-size: 15px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.sort-selector .icon {
+  width: 18px;
+  height: 18px;
+  transform: rotate(90deg);
+}
+.sort-selector.ascending .icon {
+  transform: rotate(270deg);
+}

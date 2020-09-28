@@ -1,0 +1,18 @@
+<div *ngIf="model.type !== folderType" class="tree-node">
+    <div class="icon icon-file"></div>
+    <div class="title">{{model.name}}</div>
+</div>
+<div *ngIf="model.type == folderType" >
+    <div class="folder">
+        <div (click)="toggleFolder(model.id)" class="icon icon-toggle" [class.opened]="isOpen"></div>
+        <div  class="tree-node">
+            <div class="icon icon-folder"></div>
+            <div class="title">{{model.name}}</div>
+            <div class="counter">{{ model.filesCount }}</div>
+        </div>
+    </div>
+
+  <div  *ngIf="isOpen">
+    <tree-list [treeList]="model.children"></tree-list>
+  </div>
+</div>

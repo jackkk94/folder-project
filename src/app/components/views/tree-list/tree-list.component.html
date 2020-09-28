@@ -1,0 +1,11 @@
+
+<div class="tree-list">
+  <div class="sort-selector" (click)="sort()" [class.ascending]="sortIsAscending">
+    <div class="icon icon-arrow"></div>
+    <div class="text">Имя</div>
+    </div>
+  <div  *ngFor="let node of treeList">
+    <tree-node [model]="node"></tree-node>
+  </div>
+</div>
+

@@ -1,16 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { TreeListComponent } from './components/views/tree-list/tree-list.component';
+import { MainPageComponent } from './components/pages/main-page/main-page.component';
+import {MainService} from './services/main.service';
+import { TreeNodeComponent } from './components/views/tree-node/tree-node.component';
 @NgModule({
   declarations: [
-    AppComponent
+    TreeListComponent,
+    MainPageComponent,
+    TreeNodeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [MainService],
+  bootstrap: [MainPageComponent]
 })
 export class AppModule { }

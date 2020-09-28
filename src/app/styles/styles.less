@@ -1,0 +1,140 @@
+@import "./variables.less";
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 50px 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 90%;
+  border: 1px solid @light-grey-color;
+  height: 80vh;
+  overflow: hidden;
+  padding: 20px;
+  box-shadow: @wrapper-box-shadow
+}
+
+.header {
+  font-size: 22px;
+  border-bottom: 1px solid;
+  padding-bottom: 10px;
+}
+
+.tree-container {
+  padding: 20px 0;
+  max-height: 90%;
+  overflow-y: overlay;
+  & .tree-list {
+    display: flex;
+    flex-direction: column;
+    margin-left: 32px;
+    & .folder {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      & .tree-node {
+        font-size: 18px;
+      }
+    }
+    & .counter {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: @middle-blue-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 14px;
+      margin-left: 5px;
+    }
+  }
+  & .tree-node {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  margin-right: 8px;
+  &.icon-toggle {
+    cursor: pointer;
+    background-color: @icon-toggle-bg-color;
+    &:before {
+      content: "+";
+    }
+    &.opened {
+      &:before {
+        content: "-";
+      }
+    }
+  }
+  &.icon-folder {
+    background: url(../../assets/img/folder.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  &.icon-file {
+    background: url(../../assets/img/file.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  &.icon-arrow {
+    background: url(../../assets/img/arrow.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.sort-selector{
+    color: @sort-selector-color;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    & .text{
+        font-size: 15px;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    & .icon{
+        width: 18px;
+        height: 18px;
+        transform: rotate(90deg);
+
+    }
+    &.ascending{
+        & .icon{
+            transform: rotate(270deg);
+        }
+        
+    }
+}
